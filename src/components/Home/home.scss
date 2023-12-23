@@ -1,0 +1,80 @@
+@use '../../styles/varaiveis.scss' as variaveis;
+
+.home {
+    display: flex;
+    font-family: 'Rubik Bubbles', sans-serif;
+    color: variaveis.$txt-clr;
+    letter-spacing: 2px;
+    align-items: center;
+    flex-direction: column;
+    padding: 2.5rem 0;
+}
+.home article {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1150px;
+    width: 100%;
+    padding-top: 2.5rem;
+    padding-inline: 1rem;
+    flex-wrap: wrap;
+    gap: 50px 20px;
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1.5rem;
+        align-items: center;
+        cursor: pointer;
+        
+        &:hover {
+            animation: sumir .2s linear alternate;
+        }
+        img {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
+.home figure:nth-child(3) img::after {
+    content: 'Em breve';
+    position: absolute;
+    background-color: variaveis.$bkgrd-clr-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+@keyframes sumir {
+    0% {
+        opacity: 1;
+    }
+    15% {
+        opacity: .5;
+        transform: scale(1.05);
+    }
+    25% {
+        opacity: .7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media (max-width: 700px) {
+    main {
+        padding-top: 2.5rem;
+    }
+    .home article figure {
+        padding-bottom: 1rem;
+        font-size: 1.25rem;
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
