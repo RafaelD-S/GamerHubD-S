@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import jogoDaVelha from '../../assets/jogo-Da-Velha.png'
-import jogoDaVelha2 from '../../assets/jogo-Da-Velha2.png'
-import jogoDaMemoria from '../../assets/jogo-Da-Memoria.png'
-import jogoDaMemoria2 from '../../assets/jogo-Da-Memoria2.png'
+import jogoDaVelha from '../../assets/jogo-Da-Velha-ativo.png'
+import jogoDaVelha2 from '../../assets/jogo-Da-Velha.png'
+import jogoDaMemoria from '../../assets/jogo-Da-Memoria-ativo.png'
+import jogoDaMemoria2 from '../../assets/jogo-Da-Memoria.png'
 import './home.scss'
 
 export default function Home() {
