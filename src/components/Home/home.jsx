@@ -33,7 +33,7 @@ export default function Home() {
             id: 2,
             selecionado: false,
             nome: 'Em breve',
-            rota: 'em-breve',
+            rota: '/',
             imagemBase: '',
             imagemHover: '',
             imagemMostrando: ''
