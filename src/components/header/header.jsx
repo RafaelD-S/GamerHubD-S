@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 export default function Header() {
     return (
         <header>
+            <Link to={'/'}>
                 <section>
-                    <Link to={'/'}>
                         <h1>
                             GamerHub D-S
                         </h1>
-                    </Link>
                 </section>
+            </Link>
                 <nav>
                     <ul>
                         <Link to={'/'}>
