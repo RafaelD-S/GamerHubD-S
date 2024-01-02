@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import jogoDaVelha from '../../assets/jogo-Da-Velha.png'
 import jogoDaVelha2 from '../../assets/jogo-Da-Velha2.png'
 import jogoDaMemoria from '../../assets/jogo-Da-Memoria.png'
@@ -14,6 +15,7 @@ export default function Home() {
             id: 0,
             selecionado: false,
             nome: 'Jogo da Velha',
+            rota: 'jogo-da-velha',
             imagemBase: jogoDaVelha2,
             imagemHover: jogoDaVelha,
             imagemMostrando: jogoDaVelha2
@@ -22,6 +24,7 @@ export default function Home() {
             id: 1,
             selecionado: false,
             nome: 'Jogo da Memoria',
+            rota: 'jogo-da-memoria',
             imagemBase: jogoDaMemoria2,
             imagemHover: jogoDaMemoria,
             imagemMostrando: jogoDaMemoria2
@@ -30,6 +33,7 @@ export default function Home() {
             id: 2,
             selecionado: false,
             nome: 'Em breve',
+            rota: 'em-breve',
             imagemBase: '',
             imagemHover: '',
             imagemMostrando: ''
@@ -37,19 +41,16 @@ export default function Home() {
     ])
     const mudarImagem = (id, entrando) => {
         const novoJogos = [...jogos]
-        console.log('passou o pau')
 
         if(entrando) {
             novoJogos.forEach(e => {
                 e.selecionado = e.id === id
                 e.selecionado ? e.imagemMostrando = e.imagemHover : ''
-                console.log("entrando")
             })
         } else {
             novoJogos.forEach(e => {
                 e.selecionado = e.id === id
                 e.selecionado ? e.imagemMostrando = e.imagemBase : ''
-                console.log('saindo')
             })
         }
 
@@ -64,12 +65,14 @@ export default function Home() {
                 </h2>
                 <article>
                     {jogos.map((e) => (
-                        <figure onMouseEnter={() => mudarImagem(e.id, true)} onMouseLeave={() => mudarImagem(e.id, false)} key={e.id}>
-                            <img src={e.imagemMostrando} alt={e.nome} />
-                            <figcaption>
-                                {e.nome}
-                            </figcaption>
-                        </figure>
+                        <Link to={e.rota}>
+                            <figure onMouseEnter={() => mudarImagem(e.id, true)} onMouseLeave={() => mudarImagem(e.id, false)} key={e.id}>
+                                <img src={e.imagemMostrando} alt={e.nome} />
+                                <figcaption>
+                                    {e.nome}
+                                </figcaption>
+                            </figure>
+                        </Link>
                     ))}
                 </article>
             </section>
